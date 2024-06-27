@@ -30,7 +30,7 @@ app.frame('/finish', (c) => {
 app.transaction('/challenge', (c) => {
   return c.contract({
     abi: F1337Abi,
-    chainId: 'eip155:10', // TODO: To be changed. Base is eip155:10, Base Sepolia is eip155:84532
+    chainId: 'eip155:8453', // TODO: To be changed. Base is eip155:8453, Base Sepolia is eip155:84532
     functionName: 'mint',
     to: '0x15EBaAD8717A6B71116ffAF1E0FD4A3b4DE0F96C' // F1337
   })

@@ -1,7 +1,8 @@
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev'
 import { serveStatic } from 'frog/serve-static'
-import { GmonsterAbi } from '../constants/GmonsterAbi.js'
+// import { GmonsterAbi } from '../constants/GmonsterAbi.js'
+import { F1337Abi } from '../constants/F1337Abi.js'
 // import { neynar } from 'frog/hubs'
 
 export const app = new Frog({
@@ -28,10 +29,10 @@ app.frame('/finish', (c) => {
 
 app.transaction('/challenge', (c) => {
   return c.contract({
-    abi: GmonsterAbi,
-    chainId: 'eip155:84532', // TODO: To be changed. Base is eip155:10, Base Sepolia is eip155:84532
-    functionName: 'challenge',
-    to: '0x7ca674d4f3579658cd1fba597b92d8d931a493ff' // TODO: To be changed
+    abi: F1337Abi,
+    chainId: 'eip155:10', // TODO: To be changed. Base is eip155:10, Base Sepolia is eip155:84532
+    functionName: 'mint',
+    to: '0x15EBaAD8717A6B71116ffAF1E0FD4A3b4DE0F96C' // F1337
   })
 })
 devtools(app, { serveStatic })

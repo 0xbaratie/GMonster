@@ -15,7 +15,8 @@ app.frame('/', (c) => {
     action: '/finish',
     image: 'https://gmon-frames.vercel.app/title.png',
     intents: [
-      <Button.Transaction target="/challenge">GM</Button.Transaction>,
+      // <Button.Transaction target="/challenge">GM</Button.Transaction>,
+      <Button action="/before-start">GM</Button>,
     ]
   })
 })
@@ -26,6 +27,18 @@ app.frame('/finish', (c) => {
     image: 'https://gmon-frames.vercel.app/gmon/01.png', // TODO: Changed everyday
   })
 })
+
+app
+.frame('/before-start', (c) => {
+  return c.res({
+    image: 'https://gmonster.vercel.app/before-start.png',
+    intents: [
+      <Button.Reset>Top</Button.Reset>,
+      <Button.Link href="https://gmonster.vercel.app">Website</Button.Link>,
+    ]
+  })
+})
+
 
 app.transaction('/challenge', (c) => {
   return c.contract({
